@@ -1,4 +1,6 @@
 
+compiletoflash 
+
 0     variable speed
 0     variable steer
 $aaaa constant header
@@ -12,9 +14,10 @@ $aaaa constant header
 : fwd ( speed --  ) speed ! send ;
 : turn ( steer --  ) steer ! send ;
 
-19200 uart-init
+: init init 19200 uart-init ;
 
-
+cornerstone <<hoverboard>>
+compiletoram
 
 
 
